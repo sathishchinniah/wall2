@@ -30,6 +30,12 @@
         myScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(30, 0, frame.size.width-30, frame.size.height)];
         
         
+        myScrollView.userInteractionEnabled=NO;
+       
+           // myScrollView.showsHorizontalScrollIndicator = NO;
+        
+            //myScrollView.userInteractionEnabled=NO;
+
         [self addSubview:myScrollView];
     }
     return self;

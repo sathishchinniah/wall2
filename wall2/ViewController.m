@@ -46,7 +46,7 @@
     firstdate = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:-6 toDate:[NSDate date] options:nil];
     //
     
-    
+
     
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -69,23 +69,19 @@
 //
     
     for (int x=0; x<=path; x++) {
-        //[self dateChange];
+        [self dateChange];
         
         chart = [[UUChart alloc]initwithUUChartDataFrame:CGRectMake(5,self.view.frame.size.height- 270,[UIScreen mainScreen].bounds.size.width+40, 265) withSource:self
         withStyle:UUChartBarStyle];
         
-       
-        
-
         chart.layer.borderColor = [UIColor grayColor].CGColor;
         chart.layer.borderWidth = 1.0f;
         [chart showInView:self.view];
     }
-       [self dateChange];
+       //[self dateChange];
 
 
 }
-
 -(void)dateChange
 {
     NSArray *labelArray = @[flabel, slabel, tlabel, folabel, fivlabel,sixlabel,sevenlabel];
@@ -108,6 +104,7 @@
                 rightBtn.enabled = false;
                 
                 //It's the same day
+                
             }
             else
             {
@@ -144,13 +141,13 @@
 - (NSArray *)UUChart_xLableArray:(UUChart *)chart
 {
     
-    return @[@"Jan11",@"Jan12",@"Jan13",@"Jan14",@"Jan15",@"Jan16",@"Jan17",@"Jan18",@"Jan19",@"Jan20",@"Jan22",@"Jan23",@"Jan24",@"Jan25"];
+    return @[@"Jan11",@"Jan12",@"Jan13",@"Jan14",@"Jan15",@"Jan16",@"Jan17",@"Jan18",@"Jan19",@"Jan20",@"Jan21",@"Jan22",@"Jan23",@"Jan24",@"Jan25",@"Jan26"];
 }
 
 - (NSArray *)UUChart_yValueArray:(UUChart *)chart
 {
-    NSArray *ary1 = @[@"22",@"54",@"15",@"30",@"42",@"77",@"43",@"76",@"34",@"54",@"23",@"16",@"32",@"17"];
-    NSArray *ary2 = @[@"76",@"34",@"54",@"23",@"16",@"32",@"17",@"22",@"54",@"15",@"30",@"42",@"77",@"43"];
+    NSArray *ary1 = @[@"2",@"4",@"6",@"8",@"10",@"12",@"14",@"16",@"14",@"12",@"10",@"8",@"6",@"4",@"2",@"2"];
+    NSArray *ary2 = @[@"4",@"8",@"16",@"20",@"24",@"28",@"32",@"36",@"32",@"28",@"24",@"20",@"16",@"12",@"8",@"4"];
 
    
         return @[ary1,ary2];
@@ -162,48 +159,40 @@
     return @[UUBlue, UUGreen];
 }
 //显示数值范围
-- (CGRange)UUChartChooseRangeInLineChart:(UUChart *)chart
-{
-    
-    if (path==0) {
-        return CGRangeMake(60, 10);
-    }
-    if (path==2) {
-        return CGRangeMake(100, 0);
-    }
-    return CGRangeZero;
-}
+//- (CGRange)UUChartChooseRangeInLineChart:(UUChart *)chart
+//{
+//    
+//    if (path==0) {
+//        return CGRangeMake(60, 10);
+//    }
+//    if (path==2) {
+//        return CGRangeMake(100, 0);
+//    }
+//    return CGRangeZero;
+//}
 
 #pragma mark 折线图专享功能
 
-//标记数值区域
-- (CGRange)UUChartMarkRangeInLineChart:(UUChart *)chart
-{
-  
-    if (path==2) {
-        return CGRangeMake(25, 75);
-    }
-    return CGRangeZero;}
-
-//判断显示横线条
-- (BOOL)UUChart:(UUChart *)chart ShowHorizonLineAtIndex:(NSInteger)index
-{
-    return YES;
-}
-
-//判断显示最大最小值
-- (BOOL)UUChart:(UUChart *)chart ShowMaxMinAtIndex:(NSInteger)index
-{
-    return 2;
-}
-
-
-
-
--(void)dailyCalendarViewDidSelect:(NSDate *)date
-{
-    //You can do any logic after the view select the date
-}
+////标记数值区域
+//- (CGRange)UUChartMarkRangeInLineChart:(UUChart *)chart
+//{
+//  
+//    if (path==2) {
+//        return CGRangeMake(25, 75);
+//    }
+//    return CGRangeZero;}
+//
+////判断显示横线条
+//- (BOOL)UUChart:(UUChart *)chart ShowHorizonLineAtIndex:(NSInteger)index
+//{
+//    return YES;
+//}
+//
+////判断显示最大最小值
+//- (BOOL)UUChart:(UUChart *)chart ShowMaxMinAtIndex:(NSInteger)index
+//{
+//    return 2;
+//}
 
 
 - (void)didReceiveMemoryWarning {
