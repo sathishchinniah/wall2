@@ -2,8 +2,8 @@
 //  wall2UITests.m
 //  wall2UITests
 //
-//  Created by Sathish Chinniah on 28/12/15.
-//  Copyright © 2015 Sathish Chinniah. All rights reserved.
+//  Created by James on 28/12/15.
+//  Copyright © 2015 James. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
